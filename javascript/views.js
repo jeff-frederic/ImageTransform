@@ -1,3 +1,4 @@
+import { greyscale } from "./analyzer.js";
 
 
 export function buildView(image){
@@ -13,12 +14,12 @@ export function buildView(image){
 
         ctx.drawImage(image, 0, 0);
 
-        blackAndWhiteCanvas(canvas);
+        let blackWhite = blackAndWhiteCanvas(canvas);
         // let ascii = asciiCanvas(canvas);
         // let pixelated = pixelatedCanvas(canvas);
 
         canvasContainer.appendChild(canvas);
-        // canvasContainer.appendChild(blackWhite);
+        canvasContainer.appendChild(blackWhite);
         // canvasContainer.appendChild(ascii);
         // canvasContainer.appendChild(pixelated);
     }
@@ -30,8 +31,15 @@ export function buildView(image){
 
 
 function blackAndWhiteCanvas(canvas){
-    let ctx = canvas.getContext('2d');
-    console.log(ctx.getImageData(0, 0, canvas.width, canvas.height));
+    let imgData =  canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
+    
+    let newCanvas = document.createElement('canvas');
+    let newCtx = newCanvas.getContext('2d');
+    styleCanvas(canvas, newCanvas);
+    
+    newCtx.putImageData(greyscale(imgData), 0, 0);
+    
+    return newCanvas;
 }
 
 
@@ -42,4 +50,12 @@ export function clearView(){
 }
 
 
-
+/**
+ * Copies the width, height from one canvas 
+ * to a new one. Also sets styling for new one.
+ */
+function styleCanvas(mainCanvas, newCanvas){
+    newCanvas.height = mainCanvas.height; 
+    newCanvas.width = mainCanvas.width; 
+    newCanvas.style = 'border: 2px solid black';
+}
