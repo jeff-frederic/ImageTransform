@@ -3,6 +3,7 @@
     <head>
         <title>ImageTransform</title>
         <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>Image-Transform</h1>
@@ -12,12 +13,15 @@
             Enjoy :)
         </h5>
         <div style="display: flex;">
-            <button>Portrait</button>
-            <button>Flower</button>
-            <button>Buildings</button>
+            <button id="portraitButton">Portrait</button>
+            <button id="flowerButton">Flower</button>
+            <button id="buildingsButton">Buildings</button>
+            <button id="twofaceButton">TwoFace</button>
+            <button id="sunsetButton">Sunset</button>
+            <button id="monalisaButton">Mona Lisa</button>
         </div>
         <input id="image_input" type="file" accept="image/jpeg, image/jpg, image/png">
-        <div id="canvasContainer" style="display: flex; flex-wrap: wrap; ">
+        <div id="canvasContainer">
 
         </div>
     </body>
