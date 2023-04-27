@@ -1,14 +1,14 @@
 
 
-function get_average_RGB(imgData) {
+export function getAverageRGB(imageDataBlock) {
     let rgb = {r:0, g:0 ,b:0},
         count = 0;
 
-    for(let i=0; i<imgData.length; i+=4){
+    for(let i=0; i<imageDataBlock.length; i+=4){
         count++;
-        rgb.r += imgData[i];
-        rgb.g += imgData[i+1];
-        rgb.b += imgData[i+2];
+        rgb.r += imageDataBlock[i];
+        rgb.g += imageDataBlock[i+1];
+        rgb.b += imageDataBlock[i+2];
     }
 
     // ~~ used to Math.floor()
@@ -18,3 +18,5 @@ function get_average_RGB(imgData) {
 
     return rgb;
 }
+
+

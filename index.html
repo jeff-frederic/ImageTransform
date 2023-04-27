@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JPG2ASCII</title>
+        <title>ImageTransform</title>
+        <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
     </head>
     <body>
-        <canvas id="canvas" style="border: 2px solid black"></canvas>
+        <h1>Image-Transform</h1>
+        <h3>Transform your image into some cool effects!</h3>
+        <h5>Simply use one of the picture templates provided below, or upload your own image!
+            <br>
+            Enjoy :)
+        </h5>
+        <div style="display: flex;">
+            <button>Portrait</button>
+            <button>Flower</button>
+            <button>Buildings</button>
+        </div>
+        <input id="image_input" type="file" accept="image/jpeg, image/jpg, image/png">
+        <div id="canvasContainer" style="display: flex; flex-wrap: wrap; ">
+
+        </div>
     </body>
     <script src="javascript/analyzer.js" type="module"></script>
+    <script src="javascript/app.js" type="module"></script>
+    <script src="javascript/views.js" type="module"></script>
 </html>
