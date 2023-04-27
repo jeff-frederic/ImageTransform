@@ -49,6 +49,6 @@ document.getElementById('monalisaButton').addEventListener('click', () => {
 });
 
 document.getElementById('statueButton').addEventListener('click', () => {
-    statueButton.onload = buildView(monalisaImage);
+    statueButton.onload = buildView(statueImage);
 });
 
