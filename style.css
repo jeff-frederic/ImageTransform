@@ -47,3 +47,7 @@ html, body{
 .buttons button:hover{
     background-color: lightblue;
 }
+
+.active{
+    background-color: grey;
+}
